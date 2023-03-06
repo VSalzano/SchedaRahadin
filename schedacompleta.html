@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400;1,600&family=Nanum+Myeongjo:wght@400;800&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+body {
+    margin:0%;
+}
+
+.topbar {
+    background-color: black;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+   
+}
+
+
+.menu {   
+    margin-top: 50px;     
+    width: 700px;
+    display:flex; 
+    justify-content: center; 
+    justify-content: space-around;
+    align-self:center; 
+    flex-direction: row; 
+}
+
+.content {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.glow-on-hover {
+    width: 140px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #322638, #9e75c4, #7043a3, #7353ad, #220141, #002bff, #7a00ff, #5a274f, #8d5c97);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #ffffff
+
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+  #descrizione {
+    padding-top: 20px;
+    color: aliceblue;
+    margin-top: 0%;
+    width: 650px;
+    display:flex;
+    
+  }
+
+  #storia {
+    padding-top: 20px;
+    color: aliceblue;
+    margin-top: 0%;
+    width: 650px;
+    display:flex;
+  } 
+
+  #conoscenze {
+    padding-top: 20px;
+    color: aliceblue;
+    margin-top: 0%;
+    width: 650px;
+    display:flex;
+  }
+    .show{
+        opacity: 1 !important;
+        transition: 1s;
+    }
+    .hide1{
+        display: none !important;
+        transition: 1s;
+    }
+
+    .intestazione {
+        
+        display: flex;
+        background-color: black;
+        width:700px;
+        align-self: center;
+        justify-content: flex-end;
+        justify-content: space-around;
+       
+        }
+
+    .nome-cognome {
+        display:flex;
+        margin-right:50px;
+        flex-direction:column;
+        color:#83194a;
+        font-family: 'Poiret One', cursive;
+    }
+
+    #img-descrizione {
+        max-width: 50%;
+        max-height: 50%;
+        margin-top: 15px;
+    }
+
+    .descr-testo {
+        text-align: justify;
+        margin-right: 50px;
+        font-family: 'Prata', serif;
+        font-size: 13px;
+        color: #baadd3;
+    }
+    </style>
+</head>
+<body>
+    
+
+	
+	<div class="topbar">
+		<div class="intestazione">
+			<div class="nome-cognome">
+				<div><h1>Rahadin Eruannon</h1></div>
+				<div>del Bosco della Notte</div>
+			</div>
+			<div id="main-img">
+			<img src="https://i.ibb.co/Xj2vXRT/rkxc1iZ.jpg" style="max-width: 300px;">
+			</div>
+		</div>	
+		<div class="menu">
+            <div>
+                <button onclick="ShowHideSection('descrizione')" class="glow-on-hover">Descrizione fisica</button>
+            </div>
+            <div>
+                <button onclick="ShowHideSection('storia')" class="glow-on-hover">Storia</button>
+            </div>
+            <div>
+                <button onclick="ShowHideSection('conoscenze')" class="glow-on-hover">Conoscenze</button>
+            </div>
+        </div>    
+    </div>
+    <div class="content">
+		<div id="descrizione" class="hide1">
+			<p class="descr-testo">Nato da elfi della notte, l'aspetto di Rahadin rispecchia in pieno le caratteristiche fisiche più comuni del clan elfico che abita il Bosco della Notte. La sua figura è esile e slanciata, anche alta per i canoni elfici, con la corporatura di chi non ha mai veramente conosciuto la fatica fisica; non privo comunque dell'agilità e della grazia nel portamento connaturate negli elfi. I lineamenti del suo volto, benché belli ed armoniosi, si presentano spigolosi e affilati; gli zigomi leggermente sporgenti e il mento appuntito, gli occhi di forma lievemente allungata, gli conferiscono un aspetto naturalmente severo, quasi arcigno.	<br>
+			I suoi capelli sono neri a tal punto da sembrare praticamente privi di ogni sorta di riflesso, lunghi fino a metà della schiena e tenuti generalmente del tutto sciolti, in netto contrasto con la sua carnagione talmente pallida da mostrare in certo punti alcuni tenui riflessi bluastri. I suoi occhi sono di un azzurro piuttosto slavato, quasi grigi. <br>
+			Ripone enorme cura nel suo abbigliamento; non appare mai trascurato o trasandato ed anche nella quotidianità ama apparire molto elegante. Quasi sempre indossa capi pregiati e decorati più o meno riccamente, a seconda delle circostanze.</p>
+			<img id="img-descrizione"  src="https://i.pinimg.com/564x/6d/c9/95/6dc9951ba6119e85fbf9a12497bdf8e2.jpg">
+		</div>
+		<div id="storia" class="hide1">
+			<p class="descr-testo">storia storia storia storia storia storiastoria storia storistoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storiastoria storia storia</p>
+			<img id="img-descrizione"  src="https://i.pinimg.com/564x/57/e8/c0/57e8c040b5fd7283f0d3e15677021751.jpg">
+		</div>
+		<div id="conoscenze" class="hide1">
+			<p class="descr-testo">Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze Conoscenze conoscenze conoscenze conoscenze</p>
+			<img id="img-descrizione"  src="https://i.pinimg.com/564x/e1/48/32/e14832875ae971d1f4b9ecba8edea192.jpg">
+		</div>
+
+	</div>
+    <script>
+    
+		function ShowHideSection(reference) {
+				if (reference == 'descrizione') {
+					document.getElementById("descrizione").classList.add("show")
+					document.getElementById("descrizione").classList.remove("hide1")
+					
+					document.getElementById("storia").classList.add("hide1")
+					document.getElementById("storia").classList.remove("show")
+		
+					document.getElementById("conoscenze").classList.add("hide1")
+					document.getElementById("conoscenze").classList.remove("show")
+				}
+				else if (reference == 'storia') {
+					document.getElementById("storia").classList.add("show")
+					document.getElementById("storia").classList.remove("hide1")
+					
+					document.getElementById("descrizione").classList.add("hide1")
+					document.getElementById("descrizione").classList.remove("show")
+		
+					document.getElementById("conoscenze").classList.add("hide1")
+					document.getElementById("conoscenze").classList.remove("show")
+				}
+				else if (reference == 'conoscenze') {
+					document.getElementById("conoscenze").classList.add("show")    
+				  	document.getElementById("conoscenze").classList.remove("hide1")
+					
+					document.getElementById("descrizione").classList.add("hide1")
+					document.getElementById("descrizione").classList.remove("show")
+		
+					document.getElementById("storia").classList.add("hide1")
+					document.getElementById("storia").classList.remove("show")
+				}
+			}
+		
+		</script>	
+</body>
+</html>
